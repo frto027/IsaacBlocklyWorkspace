@@ -1,0 +1,50 @@
+这里统一一下类型翻译：
+
+ModObject       [Mod] RegisterMod的返回值 不清楚是什么类型，看似是Isaac又不太像，暂时认为是ModObject类型
+Text            [文本]
+Boolean         [逻辑]
+Number          [数值]
+enum            [枚举] 实际是Number
+List            [列表]
+Game            [游戏]
+MusicManager    [音乐管理器]
+SFXManager      [音效管理器]
+Vector          [向量]
+integer         [整数]实际是Number
+EntityNPC       [NPC实体]
+EntityPlayer    [Player实体]
+EntityFamiliar  [Familiar实体]
+EntityRef       [实体引用]
+InputHook       [按键钩子] 好像不太恰当！注意一下
+KColor          [K颜色] <-奇怪 Color(R,G,B,A,int,int,int,int) 第八个int不知道是什么，不能省略
+Vector2         [二维向量](划掉，直接用Vector吧)
+Vector          [向量]
+
+CacheFlag 缓存标记(是数值没错吧？)
+PillEffect 药丸效果
+
+PROJECTILE 子弹
+TREA        眼泪
+LASER       激光
+KNIFE       妈刀
+EFFECT      效果
+FIRE_TEAR   火泪
+Pickup      可拾取物
+ETERNALCHEST    白箱子(无线钥匙)
+Item        物品
+Pickup      可拾取物
+COLLECTIBLE 可收集物
+COIN        金币
+cache 缓存
+flag 标记位
+Action  行动
+poison 带毒
+slow    减速
+Layer   图层
+Sprite  
+Grid    网络
+
+Level 关卡
+Room    房间
+History 历史
+ItemOverlay 

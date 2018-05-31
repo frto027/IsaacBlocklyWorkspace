@@ -1,0 +1,199 @@
+:root{
+    --leftview-size:0px;
+    --toolbox-width:50px;
+
+    --alert-tip-height:50px;
+    --alert-tip-count:1;
+}
+.toolbox{
+    float: left;
+    overflow: hidden;
+    width: var(--toolbox-width);
+}
+.leftview{
+    float: left;
+    width: var(--leftview-size);
+}
+
+.rightview{
+    float: right;
+    width: calc(100% - var(--toolbox-width) - var(--leftview-size));
+}
+
+.splitv{
+    position: relative;
+    float: left;
+    width: 0px;
+    
+}
+#splitv{
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    left:-5px;
+    /*background-color: rgba(243, 209, 17, 0.925);*/
+    cursor: ew-resize;
+}
+.toolbox,.leftview,.rightview,.splitv{
+    height: 100%;
+}
+
+.toolbtn{
+    border-bottom-style: solid;
+    border-color: aliceblue;
+    border-width: 1px;
+    display:block;
+    cursor: default;
+
+    text-align: left;
+    overflow: hidden;
+    font-family: Verdana, Geneva, sans-serif;
+    width: calc(var(--toolbox-width));
+    height: var(--toolbox-width);
+}
+.toolbtn_icon,.toolbtn_text{
+    border-color: green;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.toolbtn_icon{
+    font-size: 30px;
+}
+
+.toolbtn_text{
+    padding-top: 15px;
+    font-size: 13px;
+}
+
+html,body{
+    margin:0;
+    height: 100%;
+    user-select: none;
+}
+body{
+    overflow: hidden;
+}
+
+.imaskon{
+    animation-name: imask;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+.imaskoff{
+    animation-name: imaskoff;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes imask{
+    from{
+        margin-top:0px
+    }
+    to{
+        margin-top:-50px
+    }
+}
+@keyframes imaskoff{
+    from{
+        margin-top:-50px
+    }
+    to{
+        margin-top:0px
+    }
+}
+/* begin of prompt */
+#prompt-mask{
+    z-index: 1000;
+    position: fixed;
+    display:none;/*flex in js*/
+    top: -50px;
+    width: 100vw;
+    height: calc(100vh + 50px);
+    align-items:flex-start;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.562)
+}
+.prompt-window{
+    margin-top: 50px;
+    display:block;
+    background-color: white;
+    width: 40%;
+    border-style: solid;
+    padding: 5px;
+}
+.prompt-show{
+    animation-name: prompt-show;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+.prompt-hide{
+    animation-name: prompt-hide;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes prompt-show{
+    from{
+        opacity: 0;
+        margin-top: -50px;
+    }
+    to{
+        margin-top: 30px;
+        opacity: 1;
+    }
+}
+@keyframes prompt-hide{
+    from{
+        opacity: 1;
+        margin-top: 30px;
+    }
+    to{
+        margin-top: -50px;
+        opacity: 0;
+    }
+}
+/* end of prompt */
+
+/* begin of alert */
+
+#tipcontainer{
+    z-index: 800;
+    position: fixed;
+    background-color: gray;
+    min-width: 80px;
+    max-width: 1000px;
+    width: 80%;
+    margin-left: 10%;
+    height: 50px;
+    bottom: -50px;
+}
+#tipalert{
+    padding-left: 10px;
+    position: relative;
+    float: left;
+    max-width: calc(100% - 80px);
+}
+#tipclose{
+    position: relative;
+    margin: 10px;
+    float: right;
+}
+.tipshow{
+    animation-name: tipshow;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+.tiphide{
+    animation-name: tiphide;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+@keyframes tiphide{
+    from{bottom: 0px;}
+    to{bottom: -50px;}
+}
+@keyframes tipshow{
+    from{bottom: -50px;}
+    to{bottom: 0px;}
+}

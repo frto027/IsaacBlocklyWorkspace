@@ -1,0 +1,39 @@
+'use strict'
+
+Blockly.defineBlocksWithJsonArray([{
+    "type": "func_game_pause",
+    "message0": "暂停游戏 %1",
+    "args0": [
+        {
+            "type": "input_value",
+            "name": "Game",
+            "check": "Game"
+        }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 90,
+    "tooltip": "Pause Game",
+    "helpUrl": ""
+},
+    {
+        "type": "func_getgame",
+        "message0": "取得游戏",
+        "output": null,
+        "colour": 230,
+        "tooltip": "[游戏]取得游戏对象",
+        "helpUrl": ""
+    }])
+Blockly.Lua['func_game_pause'] = function(block) {
+    var value_game = Blockly.Lua.valueToCode(block, 'Game', Blockly.Lua.ORDER_ATOMIC);
+    // TODO: Assemble Lua into code variable.
+    var code = value_game + '::Pause()\n';
+    return code;
+};
+
+Blockly.Lua['func_getgame'] = function(block) {
+    // TODO: Assemble Lua into code variable.
+    var code = 'Game()';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Lua.ORDER_NONE];
+};

@@ -1,0 +1,36 @@
+const tools = require('./tools')
+
+let funcs = []
+let FilePrefix = "GAME"
+funcs.push(tools.defineFunctionBlock({
+        blockname:"Game_Update",
+        funcname:"Update",
+        translate:"更新游戏",
+        args: [],
+        objValType:'Game', 
+        objName: '游戏对象[游戏]',
+        objInner:`<shadow type='isaac_game'></shadow>`,
+        helptip: "更新游戏",
+        color: 230,
+}))
+//...
+
+funcs.push(tools.defineVarBlock({
+    blockname:"Game_BossRushParTime",
+    varname:"BossRushParTime",
+    translate:"BossRush时间",
+    vartype:"Number",
+    //varconst:true,
+    objValType:"Game",//needobj
+    //nsobj:"",
+    tip:"",
+    objInner:"<shadow type='isaac_game'></shadow>",
+}))
+exports.Reg = function(workspace){
+    let ret = tools.FunctionBlocksToArray(funcs)
+	
+	workspace.registerToolboxCategoryCallback(
+  `ISAAC_CLASSFUNC_${FilePrefix}`, function(ws){
+	  return ret;
+  });
+}

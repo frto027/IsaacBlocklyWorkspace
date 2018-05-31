@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>游戏逻辑</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="logic.css">
+        
+    </head>
+    <body>
+        <div class="toolbox" style="background-color: blue">
+            <div class="toolbtn" id='btnswitch'>
+                <div class="toolbtn_icon">⌨️</div>
+                <div class="toolbtn_text">切换</div>
+            </div>
+            <div class="toolbtn" id='btnnew'>
+                <div class="toolbtn_icon">📄</div>
+                <div class="toolbtn_text">新建</div>
+            </div>
+            <div class="toolbtn" id='btnload'>
+                <div class="toolbtn_icon">🥟</div>
+                <div class="toolbtn_text">打开</div>
+            </div>
+            <div class="toolbtn" id='btnsave'>
+                <div class="toolbtn_icon">📥</div>
+                <div class="toolbtn_text">保存</div>
+            </div>
+            <div class="toolbtn" id='btnsaveother'>
+                <div class="toolbtn_icon">📥</div>
+                <div class="toolbtn_text">另存</div>
+            </div>
+            <div class="toolbtn" id="btnimport">
+                <div class="toolbtn_icon">📥</div>
+                <div class="toolbtn_text">导入</div>
+            </div>
+            <div class="toolbtn" id="btncompile">
+                <div class="toolbtn_icon">🗄</div>
+                <div class="toolbtn_text">编译</div>
+            </div>
+            <div class="toolbtn" id='btndev'>
+                <div class="toolbtn_icon">🔌</div>
+                <div class="toolbtn_text">DEV</div>
+            </div>
+        </div>
+        <div class="leftview" style="background-color: red">
+            this is a left view
+        </div>
+        <div class="splitv">
+            <div id='splitv'></div>
+        </div>
+        <div class="rightview" style="background-color: green">
+            <div id="blocklyDiv" style="height: 100%"></div><!-- Blockly Div area -->
+        </div>
+
+        <div id="prompt-mask" class="prompt-hide">
+            <div class="prompt-window">
+                <h3 id=prompt-title>Title</h3>
+                <hr>
+                <p id='prompt-msg'>
+                    this is some paragraph
+                </p>
+                <input id='prompt-input'>
+                <button id='prompt-okbtn'>确定</button>
+            </div>
+        </div>
+
+        <div id='tipcontainer'>
+            <p id='tipalert'>??????</p>
+            <button id='tipclose'>🗑</button>
+        </div>
+        
+        
+        <!-- Load Blockly Library -->
+        <script src="../blockly_compressed.js"></script>
+        <script src="../blocks_compressed.js"></script>
+        <script src="../zh-hans.js"></script>
+        <script src="lua_compressed.js"></script>
+
+        <!-- Init UI Frame and other Logic modules -->
+        <script src="logic.js"></script>
+    </body>
+</html>

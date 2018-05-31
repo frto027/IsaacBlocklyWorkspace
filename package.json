@@ -1,0 +1,23 @@
+{
+  "name": "isaacblocklyworkspace",
+  "version": "1.0.0",
+  "description": "This is a workspace for game The Binding of Isaac Afterbirth+ .Aiming to help players build mods without Lua language.I'm trying to use blockly to do this,as well as nodejs and electron.Sorry for my English,this is only for Chinese players.这是以撒的结合:胎衣+的一个小的开发工具，旨在帮助玩家不使用Lua语言来制作Mod，我使用了blockly图形化编程语言，同时使用nodejs和electron完成软件的编写。英语不好，目前只有中文。",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron . --dev-tool",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/frto027/IsaacBlocklyWorkspace.git"
+  },
+  "author": "frto027",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frto027/IsaacBlocklyWorkspace/issues"
+  },
+  "homepage": "https://github.com/frto027/IsaacBlocklyWorkspace#readme",
+  "devDependencies": {
+    "electron": "^2.0.2"
+  }
+}
