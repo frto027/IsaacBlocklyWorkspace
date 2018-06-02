@@ -3,12 +3,7 @@
 const fs = require('fs')
 let blocklyDiv = document.getElementById('blocklyDiv')
 
-//require('./IssacModule')
-/*
-const IsaacEnum = require('./IsaacEnum')
-const IsaacRootFunc = require('./IsaacRootFunc')
-const IsaacIs = require('./IsaacIs')
-*/
+//Reg here
 const regList = ['./IsaacEnum','./IsaacRootFunc','./IsaacIs','./IsGame','./IsVector','./IsKColor']
 
 var codeSpaceDiv = {}
@@ -19,11 +14,7 @@ var codeSpace = Blockly.inject('blocklyDiv',
         toolbox: Blockly.Xml.textToDom(fs.readFileSync("./WWW/ModLogic/toolbox.xml").toString())
     }
 );
-/*
-IsaacEnum.Reg(codeSpace);
-IsaacRootFunc.Reg(codeSpace);
-IsaacIs.Reg(codeSpace);
-*/
+
 regList.forEach(regname => {
     require(regname).Reg(codeSpace)
 });
